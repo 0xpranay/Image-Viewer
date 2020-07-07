@@ -11,8 +11,19 @@ import UIKit
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
+        var pictures=[String]()
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        let fm=FileManager.default
+        let path=Bundle.main.resourcePath!
+        let items = try! fm.contentsOfDirectory(atPath: path)
+        for item in items{
+            //compute items here
+            pictures.append(item)
+            
+        }
+        print(pictures)
+        
     }
 
 
